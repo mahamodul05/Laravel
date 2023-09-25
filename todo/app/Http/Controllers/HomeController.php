@@ -11,13 +11,13 @@ class HomeController extends Controller
         $role=Auth::user()->role;
 
         if($role == 0){
-            return view('dashboard');
+            return redirect(route('user.dashboard'));
         }
         if($role == 1){
-            return view('admindashboard');
+            return redirect(route('admin.dashboard'));
         }
         if($role == 2){
-            return view('superadmindashboard');
+            return redirect(route('superadmin.dashboard'));
         }
 
     }
